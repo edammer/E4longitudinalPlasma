@@ -252,7 +252,7 @@ Required inputs:
 
 Major outputs: per-assay single-panel genotype × sex interaction PDF plots with significant-EYO-bin streak annotation.
 
-### `6_Endophenotypes_FETSplitLists_7289.R`  *(new)*
+### `6_Endophenotypes_FETSplitLists_7289.R`
 Tests whether the proteins identified as significant in each 5-year EYO sliding window (and in a simple before-/after-age-50 split) are enriched for proteins previously reported as associated with neuropathology or cognitive-function endophenotypes (Nat Aging cohort marker lists), using one-sided Fisher's Exact Test (FET) overlap enrichment via the lab's general-purpose `geneListFET()` wrapper. Strips non-protein `seq.####` control-assay entries from the sliding-window hit list before testing.
 
 Required inputs:
@@ -266,7 +266,7 @@ Required inputs:
 
 Major outputs: `67_5year_sliding_windowSigHits_noNonProteinAssays.csv` (cleaned hit list), plus one heatmap PDF + companion FET-statistics CSV/XLSX per `geneListFET()` call, summarizing overlap enrichment between the sliding-window hit list and each Nat Aging marker reference list.
 
-### `7a_ExtractSigAssays_2directions_ALL-up_down___7289.R`, `7b_ExtractSigAssays_2directions_UP_-7289.R`, `7c_ExtractSigAssays_2directions_DOWN_-7289.R`  *(new; replaces prior single-file `6.ExtractSigAssays_2directions(ALL-up+down)_z=1.645.R`)*
+### `7a_ExtractSigAssays_2directions_ALL-up_down___7289.R`, `7b_ExtractSigAssays_2directions_UP_-7289.R`, `7c_ExtractSigAssays_2directions_DOWN_-7289.R`
 Three companion scripts sharing one pipeline, run for the combined (ALL = up+down), UP-only, and DOWN-only significance-direction subsets respectively. For 67 overlapping 5-year EYO sliding windows, each script: (1) collects the assays significant at p≤0.005 anywhere in that window for its direction subset; (2) tabulates and plots assay counts per window with a WGCNA module-color overlay (this combined-direction figure is generated once, by `7a`); (3) runs GO/Reactome/WikiPathways/MSigDB hypergeometric over-/under-representation enrichment of each window's assay list against the full assay background, in parallel, using an embedded GOparallel-style enrichment engine; (4) summarizes per-window, per-ontology enrichment Z-scores as trajectory line plots and row-clustered heatmaps; and (5) subsets to a curated, manually defined set of 141 representative ontology terms spanning 18 categories and draws the final category-ordered publication heatmap. `7a` independently curates the 141-term/18-category selection and final row order from its own (ALL) results; `7b`/`7c` reuse that same curated term list/order and simply recompute UP-only/DOWN-only Z-scores for it, so the three publication heatmaps are term-for-term comparable.
 
 Required inputs:
@@ -290,7 +290,7 @@ Major outputs:
 - `ALL.df_all-141ontologies.categories18.RData` (from `7a`; required input to `7b`/`7c`)
 - Saved workspace images (`Ssaved.image-…ALLhits…RData`, `saved.image-…UPhitsONLY…RData`, `saved.image-…DOWNhitsONLY…RData`) consumed by prefix `8` (CMAP) and prefix `9` (MAGMA)
 
-### `8_CMAP_perm__21x3x100000_7289.R`  *(new, consolidated; replaces prior two-file `7a.CMAP.permutation100000.R` + `7b.CMAP.permutation_plots.R`)*
+### `8_CMAP_perm__21x3x100000_7289.R`
 Single consolidated script (combining the former permutation-computation and plotting scripts) that tests whether the up/down direction of e4/e4 protein abundance trajectories within each of the 141 curated ontology terms (from prefix `7`) is connected to the semaglutide drug signature from a published reference study, more than expected by chance, using a permutation-based weighted connectivity score (Cscore/NCS, CMAP/L1000-style). Runs a 21-point minimum-effect-size (minES) sensitivity sweep across 3 EYO epochs (pre-clinical, peri-onset, post-onset) with 100,000 permutations per (ontology × epoch) cell, then draws the final category-ordered connectivity heatmap with significance-asterisk overlays.
 
 Required inputs:
@@ -307,7 +307,7 @@ Major outputs:
 - `CMAP_permutation_stats_S6_100000perm_minES.e4_0.10.xlsx` (permutation statistics workbook: Cscore, NCS, p-values, CIs, FDR, etc.)
 - `saved.image-SemaS6_minESsweep.RData` / `saved.image-CMAP.perm.RData`
 
-### `9.MAGMA_wrapper.R`  *(renumbered from `8.MAGMA_wrapper.R`)*
+### `9.MAGMA_wrapper.R`
 Defines parameters and calls `MAGMA.SPA()` for gene/protein set enrichment analysis using semaglutide or other MAGMA-style input files and module/gene-list vectors.
 
 Required inputs:
@@ -328,10 +328,10 @@ The scripts intentionally retain original absolute paths for provenance. For rep
 Recommended local files to collect:
 
 ```text
-input/9b.4cohort.csv
-input/BH-SomaSIgnals_forR_andHDS_BH.map.csv
-input/ROSMAP-SomaSignalsForR_andHDS_RM.map.csv
-input/UDS-SomaSignalsForR_andHDS_UDS.map.csv
+input/9b.4cohort.csv *
+input/BH-SomaSIgnals_forR_andHDS_BH.map.csv *
+input/ROSMAP-SomaSignalsForR_andHDS_RM.map.csv *
+input/UDS-SomaSignalsForR_andHDS_UDS.map.csv *
 input/2.Ensemble-13cellTypes-bulkRNA_Raj59-proportionEstimates.csv
 input/samePage.aheatmap.below.R
 input/buildIgraphs.R
@@ -372,6 +372,7 @@ input/MAGMA.SPA_listVectorInput.R
 input/Sema_S6_NominalP.csv
 input/Sema_S6_Qvalue.csv
 ```
+* Protected individual information in contents; files not publicly shared -- reach out for more information.
 
 ## Notes for use
 - GNPC harmonized data set (HDS) v1.3 data is available on the ADDI Azure-implemented VM platform for authorized users.
