@@ -232,7 +232,7 @@ Required inputs:
 
 Major outputs: per-assay Model 3 (genotype × sex × EYO 3-way interaction) `stan_glm` fits.
 
-### `5f3.model_3_STAN_OutputSummaryStats99CI-5xSDcleaned(RDS)-0727.R`
+### `5f2.model_3_STAN_OutputSummaryStats99CI-5xSDcleaned(RDS)-0727.R`
 Performs post-hoc posterior testing and summary extraction for Model 3, computing EYO-grid posterior means, credible intervals, and two-tailed Bayesian posterior probabilities for genotype × sex × EYO interaction terms, with corrected sex coding.
 
 Required inputs:
@@ -242,7 +242,7 @@ Required inputs:
 
 Major outputs: EYO-grid posterior mean/99% credible-interval summary tables and two-tailed posterior-probability tables per genotype × sex × EYO interaction term, consumed by `5f4`.
 
-### `5f4.Plot_STAN_model_3_99CI_withSex+Genotype+EYO_3way_int_terms-5xSDcleaned(RDS)-0727.R`
+### `5f3.Plot_STAN_model_3_99CI_withSex+Genotype+EYO_3way_int_terms-5xSDcleaned(RDS)-0727.R`
 Generates single-panel Model 3 plots showing genotype × sex interaction posterior ribbons across EYO and a colored significance streak indicating the dominant sex/genotype category at significant EYO bins.
 
 Required inputs:
