@@ -1,10 +1,11 @@
 ################################################################################################
 # Section 5 longitudinal STAN pipeline - annotated copy
-# Source file: 5f3.model_3_STAN_OutputSummaryStats99CI-5xSDcleaned(RDS)-0727.R
+# Source file: 5f2.model_3_STAN_OutputSummaryStats99CI-5xSDcleaned(RDS)-0727.R
 # Pipeline process 11/12 (sex-coding corrected summary): Post-hoc Model 2.3 joint posterior significance table generation with corrected sex coding
 #
-# Purpose: Same as 5f2, with category labels aligned to the intended Sex.int coding of 0 =
-# female and 1 = male.
+# Purpose: Use saved Model 2.3 fits, without refitting, to test the composite genotype-by-sex-
+# by-EYO posterior interaction at each EYO bin. Category labels aligned to the intended Sex.int
+# coding of 0 = female and 1 = male.
 #
 # Input:  /home/labshare/genoSex/*_with_APOE.Sex_GenotypeXSex_stan_glm.rds
 # Input:  /home/labshare/genoSex/name_match_table.RDS
