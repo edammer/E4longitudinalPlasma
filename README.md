@@ -372,7 +372,7 @@ input/MAGMA.SPA_listVectorInput.R
 input/Sema_S6_NominalP.csv
 input/Sema_S6_Qvalue.csv
 ```
-* Protected individual information in contents; files not publicly shared -- reach out for more information.
+\* Protected individual information in contents; files not publicly shared -- reach out for more information.
 
 ## Notes for use
 - GNPC harmonized data set (HDS) v1.3 data is available on the ADDI Azure-implemented VM platform for authorized users.
