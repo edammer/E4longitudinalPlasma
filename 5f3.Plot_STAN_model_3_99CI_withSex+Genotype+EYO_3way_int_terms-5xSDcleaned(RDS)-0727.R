@@ -1,6 +1,6 @@
 ################################################################################################
 # Section 5 longitudinal STAN pipeline - annotated copy
-# Source file: 5f4.Plot_STAN_model_3_99CI_withSex+Genotype+EYO_3way_int_terms-5xSDcleaned(RDS)-0727.R
+# Source file: 5f3.Plot_STAN_model_3_99CI_withSex+Genotype+EYO_3way_int_terms-5xSDcleaned(RDS)-0727.R
 # Pipeline process 12/12: Model 2.3 single-panel 99% interval plots and category streak outputs
 #
 # Purpose: Plot per-protein EYO-dependent genotype-by-sex interaction ribbons with category-
